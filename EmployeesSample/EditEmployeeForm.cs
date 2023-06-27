@@ -53,10 +53,10 @@ public partial class EditEmployeeForm : BaseEmployeeForm
         if (IsValidInput())
         {
             employee = ReadEmployeeData();
+            employee.Id = _employee.Id;
+            _mainForm.UpdateEmployee(employee);
+            Close();
         }
-
-        _mainForm.UpdateEmployee(employee);
-        Close();
     }
 
     /// <summary>
